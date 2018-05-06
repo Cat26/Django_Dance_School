@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <title>wind-rental</title>
   </head>
   <body>
@@ -17,6 +18,7 @@
   <div class="container">
       <div class="row">
           <div class="col">
+              <img src="{% static 'img/fot1.jpg' %}" class="img-fluid">
               <p>{{content}}</p>
           </div>
       </div>
