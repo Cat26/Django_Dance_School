@@ -5,22 +5,22 @@ User = get_user_model()
 
 
 class ContactForm(forms.Form):
-    fullname = forms.CharField(widget=forms.TextInput(
+    Dane = forms.CharField(widget=forms.TextInput(
         attrs={
             "class": "form-control",
-            "placeholder": "Your full name"
+            "placeholder": "Imię i Nazwisko"
         }
     ))
-    email = forms.EmailField(widget=forms.EmailInput(
+    Email = forms.EmailField(widget=forms.EmailInput(
         attrs={
             "class": "form-control",
-            "placeholder": "Your email"
+            "placeholder": "Email"
         }
     ))
-    content = forms.CharField(widget=forms.Textarea(
+    Treść = forms.CharField(widget=forms.Textarea(
         attrs={
             "class": "form-control",
-            "placeholder": "Your message"
+            "placeholder": "Treść"
         }
     ))
 

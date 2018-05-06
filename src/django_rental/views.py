@@ -33,13 +33,6 @@ def contact_page(request):
     return render(request, "contact/view.html", context)
 
 
-def zajecia(request):
-    context = {
-        "title": "zajecia",
-        "content": "Welcome to zajecia page"
-    }
-    return render(request, "home_page.html", context)
-
 
 def zapisy(request):
     context = {
@@ -61,7 +54,7 @@ def cennik(request):
         "title": "cennik",
         "content": "Welcome to cennik page"
     }
-    return render(request, "home_page.html", context)
+    return render(request, "cennik/cennik.html", context)
 
 
 def login_page(request):

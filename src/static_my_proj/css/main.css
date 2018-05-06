@@ -28,10 +28,11 @@ li a:hover {
     text-decoration: none;
 }
 
-li a:active{
-    background-color: #5e7d00;
+
+li a:hover:not(.active) {
+    background-color: #111;
 }
 
-#nav{
-    margin: 0;
+.active {
+    background-color: #4CAF50;
 }
