@@ -32,6 +32,38 @@ def contact_page(request):
         print(contact_form.cleaned_data)# po submit zostaja dane widoczne
     return render(request, "contact/view.html", context)
 
+
+def zajecia(request):
+    context = {
+        "title": "zajecia",
+        "content": "Welcome to zajecia page"
+    }
+    return render(request, "home_page.html", context)
+
+
+def zapisy(request):
+    context = {
+        "title": "zapisy",
+        "content": "Welcome to zapisy page"
+    }
+    return render(request, "zapisy/view.html", context)
+
+
+def grafik(request):
+    context = {
+        "title": "grafik",
+        "content": "Welcome to grafik page"
+    }
+    return render(request, "home_page.html", context)
+
+def cennik(request):
+    context = {
+        "title": "cennik",
+        "content": "Welcome to cennik page"
+    }
+    return render(request, "home_page.html", context)
+
+
 def login_page(request):
     form = LoginForm(request.POST or None)
     context ={

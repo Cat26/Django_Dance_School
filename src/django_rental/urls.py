@@ -13,16 +13,26 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+
 from django.conf.urls import url
 from django.contrib import admin
 from django.conf import settings
-from django.conf.urls.static import static # obie linijki zeby pobrac statics#
+from django.conf.urls.static import static
 
-from .views import home_page, about_page, contact_page, login_page, register_page
+
+from instruktorzy.views import InstruktorListView, instruktor_list_view
+
+from .views import home_page, about_page, contact_page, login_page, register_page, zajecia, zapisy, grafik, cennik
 urlpatterns = [
-    url(r'^$', home_page),
-    url(r'^about/$', about_page),
-    url(r'^contact/$', contact_page),
+    url(r'^$', home_page, name='home'),
+    url(r'^about/$', about_page, name='about'),
+    url(r'^contact/$', contact_page, name='contact'),
+    url(r'^zajecia/$', zajecia, name='zajecia'),
+    url(r'^zapisy/$', zapisy, name='zapisy'),
+    url(r'^grafik/$', grafik, name='grafik'),
+    url(r'^cennik/$', cennik, name='cennik'),
+    url(r'^instruktorzy/$', InstruktorListView.as_view(), name='kadra'),
+    url(r'^instruktorzy-fbv/$', instruktor_list_view),
     url(r'^login/$', login_page),
     url(r'^register/$', register_page),
     url(r'^admin/', admin.site.urls),

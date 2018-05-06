@@ -1,0 +1,37 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block head_title %}dance studio{% endblock head_title %}
+    </title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link rel="stylesheet", href='{% static "css/main.css" %}'/>
+</head>
+<body>
+    <div class="container">
+        {% block nav %}
+        <ul id="nav">
+            <li>{% block nav-home %}<a href="{% url 'home' %}">Home</a>{% endblock %}</li>
+            <li>{% block nav-about %}<a href="{% url 'about' %}">About</a>{% endblock %}</li>
+            <li>{% block nav-kadra %}<a href="{% url 'kadra' %}">Kadra</a>{% endblock %}</li>
+            <li>{% block nav-zajecia %}<a href="{% url 'zajecia' %}">Zajęcia</a>{% endblock %}</li>
+            <li>{% block nav-grafik %}<a href="{% url 'grafik' %}">Grafik</a>{% endblock %}</li>
+            <li>{% block nav-cennik %}<a href="{% url 'cennik' %}">Cennik</a>{% endblock %}</li>
+            <li>{% block nav-contact %}<a href="{% url 'contact' %}">Contact</a>{% endblock %}</li>
+        </ul>
+        {% endblock %}
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
