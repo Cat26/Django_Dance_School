@@ -2,9 +2,6 @@ body {
     color: #8a4182;
 }
 
-.navbar .active {
-    font-weight: bold;
-}
 ul {
     list-style-type: none;
     margin: 0;
@@ -15,6 +12,7 @@ ul {
 
 li {
     float: left;
+    text-decoration: none;
 }
 
 li a {
@@ -27,4 +25,13 @@ li a {
 
 li a:hover {
     background-color: #111;
+    text-decoration: none;
+}
+
+li a:active{
+    background-color: #5e7d00;
+}
+
+#nav{
+    margin: 0;
 }
