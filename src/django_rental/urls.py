@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 
 
 from instruktorzy.views import InstruktorListView, instruktor_list_view
-from zajecia.views import ZajeciaListView, zajecia_list_view
+from zajecia.views import ZajeciaListView, zajecia_list_view, ZajeciaDetailView, zajecia_detail_view
 
 from .views import home_page, about_page, contact_page, login_page, register_page, zapisy, grafik, cennik
 urlpatterns = [
@@ -34,9 +34,11 @@ urlpatterns = [
     url(r'^instruktorzy/$', InstruktorListView.as_view(), name='kadra'),
     url(r'^instruktorzy-fbv/$', instruktor_list_view),
     url(r'^zajecia/$', ZajeciaListView.as_view(), name='zajecia'),
-    url(r'^instruktorzy-fbv/$', zajecia_list_view),
-    url(r'^login/$', login_page),
-    url(r'^register/$', register_page),
+    url(r'^zajecia-fbv/$', zajecia_list_view),
+    url(r'^zajecia/(?P<pk>\d+)$', ZajeciaDetailView.as_view()),
+    url(r'^zajecia-fbv/(?P<pk>\d+)$', zajecia_detail_view),#sprawdza pk
+    url(r'^login/$', login_page, name='logowanie'),
+    url(r'^register/$', register_page, name='rejestracja'),
     url(r'^admin/', admin.site.urls),
 ]
 

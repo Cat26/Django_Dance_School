@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
         {% block head_title %}dance studio{% endblock head_title %}
     </title>
@@ -11,22 +12,30 @@
 
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet", href='{% static "css/main.css" %}'/>
 </head>
 <body>
     <div class="container">
-        {% block nav %}
-        <ul id="nav">
-            <li>{% block nav-home %}<a href="{% url 'home' %}">Home</a>{% endblock %}</li>
-            <li>{% block nav-about %}<a href="{% url 'about' %}">Aktualności</a>{% endblock %}</li>
-            <li>{% block nav-kadra %}<a href="{% url 'kadra' %}">Kadra</a>{% endblock %}</li>
-            <li>{% block nav-zajecia %}<a href="{% url 'zajecia' %}">Zajęcia</a>{% endblock %}</li>
-            <li>{% block nav-grafik %}<a href="{% url 'grafik' %}">Grafik</a>{% endblock %}</li>
-            <li>{% block nav-cennik %}<a href="{% url 'cennik' %}">Cennik</a>{% endblock %}</li>
-            <li>{% block nav-contact %}<a href="{% url 'contact' %}">Kontakt</a>{% endblock %}</li>
-        </ul>
-        {% endblock %}
+        <div class="navbar">
+          <a href="{% url 'home' %}">Home</a>
+          <a href="{% url 'about' %}">Aktualności</a>
+            <a href="{% url 'kadra' %}">Kadra</a>
+            <a href="{% url 'zajecia' %}">Zajęcia</a>
+            <a href="{% url 'grafik' %}">Grafik</a>
+            <a href="{% url 'cennik' %}">Cennik</a>
+            <a href="{% url 'contact' %}">Kontakt</a>
+        <div class="dropdown">
+        <button class="dropbtn">Logowanie
+        <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="{% url 'logowanie' %}">Zaloguj się</a>
+          <a href="{% url 'rejestracja' %}">Zarejestruj się</a>
+        </div>
+    </div>
+    </div>
+
         {% block content %}
         {% endblock content %}
     </div>
