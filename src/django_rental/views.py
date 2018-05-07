@@ -14,13 +14,6 @@ def home_page(request):
     return render(request, "home_page.html", context)
 
 
-def about_page(request):
-    context = {
-        "title": "about page",
-        "content": "Welcome to about page"
-    }
-    return render(request, "home_page.html", context)
-
 def contact_page(request):
     contact_form = ContactForm(request.POST or None)
     context = {
