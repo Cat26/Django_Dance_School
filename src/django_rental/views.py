@@ -27,20 +27,12 @@ def contact_page(request):
 
 
 
-def zapisy(request):
-    context = {
-        "title": "zapisy",
-        "content": "Welcome to zapisy page"
-    }
-    return render(request, "zapisy/view.html", context)
-
-
 def grafik(request):
     context = {
         "title": "grafik",
         "content": "Welcome to grafik page"
     }
-    return render(request, "home_page.html", context)
+    return render(request, "grafik/grafik.html", context)
 
 def cennik(request):
     context = {
