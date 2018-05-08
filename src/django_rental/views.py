@@ -2,15 +2,13 @@ from django.contrib.auth import authenticate, login, get_user_model
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import ContactForm, LoginForm, RegisterForm
-
+from django.contrib.auth import logout
 
 def home_page(request):
     context = {
         "title": "Home",
         "content": "Welcome to home page"
     }
-    if request.user.is_authenticated():
-        context['premium_content'] = "szalalaala"
     return render(request, "home_page.html", context)
 
 
@@ -76,3 +74,9 @@ def register_page(request):
         new_user = User.objects.create_user(username, email, password)
         print(new_user)
     return render(request, "auth/register.html", context)
+
+
+def logout_page(request):
+        if request.user.is_authenticated():
+            logout(request)
+            return redirect("/")
