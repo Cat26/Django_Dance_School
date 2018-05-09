@@ -1,36 +1,22 @@
 {% include "main.html" %}
 {% load staticfiles %}
-
-<div class="col-sm-5 col-offset-7">
-            <h1>Zapisy:</h1>
-    <botton><a href="{% url 'create'%}" class="btn btn-primary" role="button">Dodaj Zajecia</a></botton>
-
-        {% for obj in object_list %}
+<link rel="stylesheet", href="{% static 'css/zapisy.css' %}">
+<div class ="container">
+<h1>Twoje Zajęcia:</h1>
+    <div class="col">
     <div class="row">
-  <div class="col-sm-12">
-    <div class="thumbnail">
-      <!--<img src="..." alt="...">-->
-      <div class="caption">
-          {{obj.your_choice}}
-      </div>
-    </div>
-  </div>
-        <hr/>
-    </div>
-        {% endfor %}
-<div class="pagination">
-    <span class="step-links">
-        {% if object_list.has_previous %}
-            <a href="?{{page_request_var}}={{ object_list.previous_page_number }}">previous</a>
-        {% endif %}
+    <botton><a href="{% url 'create'%}" class="btn btn-primary" role="button">Dodaj Zajecia</a></botton>
+<table>
+    {% for obj in object_list %}
 
-        <span class="current">
-            Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.
-        </span>
-
-        {% if object_list.has_next %}
-            <a href="?{{page_request_var}}={{ object_list.next_page_number }}">next</a>
-        {% endif %}
-    </span>
-</div>
+        <tr>
+            <td>{{obj.get_your_choice_display}}</td>
+            <td>{{obj.get_day_choice_display}}</td>
+            <td>{{obj.get_hour_choice_display}}</td>
+            <td><a href="{{obj.get_absolute_url}}" class="btn btn-primary" role="button">Edytuj</a></td>
+         </tr>
+    {% endfor %}
+    </table>
+        </div>
+        </div>
 </div>

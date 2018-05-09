@@ -36,22 +36,8 @@ def zapisy_list(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse('logowanie'))
     queryset_list = Zapisy.objects.filter(user=request.user)
-    paginator = Paginator(queryset_list, 6)  # Show 25 contacts per page
-    page_request_var = 'page'
-    page = request.GET.get(page_request_var)
-    try:
-        queryset = paginator.page(page)
-    except PageNotAnInteger:
-        # If page is not an integer, deliver first page.
-        queryset = paginator.page(1)
-    except EmptyPage:
-        # If page is out of range (e.g. 9999), deliver last page of results.
-        queryset = paginator.page(paginator.num_pages)
-
     context = {
-            "object_list": queryset,
-            "title": "List",
-            "page_request_var": page_request_var
+            "object_list": queryset_list,
          }
 
     return render(request, "zapisy/list.html", context)
@@ -77,7 +63,7 @@ def zapisy_delete(request, id=None):
     instance = get_object_or_404(Zapisy, id=id)
     instance.delete()
     messages.success(request, "Successfully Deleted")
-    return redirect("zajecia:list")
+    return HttpResponseRedirect(reverse('zapisy'))
     context = {
         "title": "Delete"
     }

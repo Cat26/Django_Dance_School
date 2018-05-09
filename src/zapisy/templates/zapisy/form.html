@@ -1,6 +1,8 @@
 {% include "main.html" %}
+{% load staticfiles %}
+<link rel="stylesheet", href="{% static 'css/zapisy.css'%}">
 
-<div class="col-sm-2 col-offset-12">
+<div class="container">
 <h1>Zapisy</h1>
 
 <form method="post" action="" enctype="multipart/form-data">{% csrf_token %}

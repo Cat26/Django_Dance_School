@@ -1,12 +1,11 @@
 {% include "main.html" %}
 {% load staticfiles %}
-<link rel="stylesheet", href="{%static 'css/home.css'%}"/> 
+<link rel="stylesheet", href="{% static 'css/home.css' %}">
+<div class ="container">
+<h1>ggggg</h1>
 <div class="container">
-    <div class="col">
-        <div class="row">
-            <div class="col-8">
                 <img class="img-responsive" src="{% static 'img/grafik.jpg'%}"/>
-            </div>
-        </div>
-    </div>
+                <a href="{% url 'grafik' %}" class="btn btn-primary" role="button">Zobacz Grafik Zajęć</a>
+
 </div>
+    </div>

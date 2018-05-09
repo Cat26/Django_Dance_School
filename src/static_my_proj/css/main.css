@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Prosto+One');
 body {
     color: #8a4182;
-    font-family: 'Cinzel Decorative', cursive;
+    font-family: 'Prosto One', cursive;
 }
 .container{
     padding-right: 5%;

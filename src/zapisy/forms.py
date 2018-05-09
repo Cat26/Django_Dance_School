@@ -6,4 +6,6 @@ class ZapisyForm(forms.ModelForm):
         model = Zapisy
         fields = [
             "your_choice",
+            "hour_choice",
+            "day_choice"
         ]

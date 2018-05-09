@@ -1,3 +1,13 @@
 h1{
-    color: #5e7d00;
+    color: #003366;
+}
+td{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+table{
+    border: solid #aaaaaa;
+    border-radius: 15px;
 }
