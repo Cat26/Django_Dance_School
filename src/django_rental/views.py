@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import ContactForm, LoginForm, RegisterForm
 from django.contrib.auth import logout
+from django.conf import settings
 
 def home_page(request):
     context = {
@@ -77,6 +78,6 @@ def register_page(request):
 
 
 def logout_page(request):
-        if request.user.is_authenticated():
-            logout(request)
-            return redirect("/")
+    logout(request)
+    return render(request, "home_page.html")
+

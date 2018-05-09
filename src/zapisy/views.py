@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -8,18 +8,16 @@ from .forms import ZapisyForm
 
 # Create your views here.
 
-def zapisy_home(request):
-    if not request.user.is_authenticated():
-        zapisy_user = Zapisy.objects.filter(user=request.user)
-    return render(request, "zapisy/list.html", {})
 
 def zapisy_create(request):
     form = ZapisyForm(request.POST or None, request.FILES or None)
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
+        instance.user = request.user
+        instance.save()
         messages.success(request, "Successfully Created")
-        return HttpResponseRedirect(instance.get_absolute_url())
+        return HttpResponseRedirect(reverse('zapisy'))
     context = {
         "form": form,
 
@@ -35,7 +33,9 @@ def zapisy_detail(request, id=None):
 
 
 def zapisy_list(request):
-    queryset_list = Zapisy.objects.all()#.order_by("")
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('logowanie'))
+    queryset_list = Zapisy.objects.filter(user=request.user)
     paginator = Paginator(queryset_list, 6)  # Show 25 contacts per page
     page_request_var = 'page'
     page = request.GET.get(page_request_var)

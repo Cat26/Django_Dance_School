@@ -37,7 +37,7 @@ urlpatterns = [
     url(r'^zajecia/(?P<pk>\d+)/$', ZajeciaDetailView.as_view()),
     url(r'^zajecia-fbv/(?P<pk>\d+)/$', zajecia_detail_view),#sprawdza pk
     url(r'^login/$', login_page, name='logowanie'),
-    url(r'^login/$', logout_page, name='wylogowanie'),
+    url(r'^logout/$', logout_page, name='logout'),
     url(r'^register/$', register_page, name='rejestracja'),
     url(r'^zapisy/$', zapisy_list, name="zapisy"),
     url(r'^zapisy/(?P<id>\d+)/$', zapisy_detail, name='detail'),
