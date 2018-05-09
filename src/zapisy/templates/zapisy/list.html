@@ -6,9 +6,9 @@
     <div class="col">
     <div class="row">
     <botton><a href="{% url 'create'%}" class="btn btn-primary" role="button">Dodaj Zajecia</a></botton>
+        {% if object_list %}
 <table>
     {% for obj in object_list %}
-
         <tr>
             <td>{{obj.get_your_choice_display}}</td>
             <td>{{obj.get_day_choice_display}}</td>
@@ -17,6 +17,9 @@
          </tr>
     {% endfor %}
     </table>
+        {% else %}
+        <p>Nie jesteś zapisany na żadne zajęcia</p>
+        {% endif %}
         </div>
         </div>
 </div>

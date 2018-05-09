@@ -1,22 +1,16 @@
-h1{
-    color: #a41515;
-}
-div{
+.grafik{
     position: relative;
-    width: 100%;
-    max-width: 400px;
 }
-img {
-    width: 100%;
-    height: auto;
+.grafik img {
+    width: 40%;
+    height: 30px;
 }
 
-.btn {
+. grafik .btn {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 20%;
+    left: 20%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
     background-color: #555;
     color: white;
     font-size: 16px;
@@ -27,6 +21,6 @@ img {
     text-align: center;
 }
 
-.btn:hover {
+.grafik .btn:hover {
     background-color: black;
 }

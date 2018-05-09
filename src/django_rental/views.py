@@ -10,7 +10,7 @@ def home_page(request):
         "title": "Home",
         "content": "Welcome to home page"
     }
-    return render(request, "home_page.html", context)
+    return render(request, "home/home_page.html", context)
 
 
 def contact_page(request):
@@ -79,5 +79,5 @@ def register_page(request):
 
 def logout_page(request):
     logout(request)
-    return render(request, "home_page.html")
+    return render(request, "home/home_page.html")
 
