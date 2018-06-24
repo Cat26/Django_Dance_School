@@ -2,10 +2,13 @@
 {% load staticfiles %}
 <link rel="stylesheet", href="{% static 'css/zapisy.css' %}">
 <div class ="container">
-<h1>Twoje Zajęcia:</h1>
     <div class="col">
     <div class="row">
-    <botton><a href="{% url 'create'%}" class="btn btn-primary" role="button">Dodaj Zajecia</a></botton>
+        <div col-lg-4 col-md-4 col-sm-4>
+        <h1>Twoje Zajęcia:</h1>
+            <div class="zaj">
+    <a href="{% url 'create'%}" class="btn btn-primary" role="button">Kliknij żeby dodać Zajęcia</a>
+                </div>
         {% if object_list %}
 <table>
     {% for obj in object_list %}
@@ -22,4 +25,5 @@
         {% endif %}
         </div>
         </div>
+</div>
 </div>

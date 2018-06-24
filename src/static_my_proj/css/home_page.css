@@ -1,26 +1,26 @@
-.grafik{
+img {
+    width: 50%;
+    height: 50%;
     position: relative;
-}
-.grafik img {
-    width: 40%;
-    height: 30px;
+    margin: 4%;
 }
 
-. grafik .btn {
+.btn {
     position: absolute;
-    top: 20%;
-    left: 20%;
+    top: 80%;
+    left: 51%;
     transform: translate(-50%, -50%);
-    background-color: #555;
+    background-color: #333;
     color: white;
-    font-size: 16px;
+    font-size: 20px;
     padding: 12px 24px;
     border: none;
-    cursor: pointer;
-    border-radius: 5px;
+    border-radius: 0px;
     text-align: center;
+    height: 50px;
+    text-decoration: none;
 }
 
-.grafik .btn:hover {
-    background-color: black;
+.btn:hover {
+    background-color: #8a4182;
 }
