@@ -2,9 +2,76 @@
 {% load staticfiles %}
 <link rel="stylesheet", href="{% static 'css/home_page.css' %}">
 
-<div class="container">
+    <div class="row">
+        <div class=" col col-lg-3 col-md-3 col-sm-3"></div>
+        <div class=" col col-lg-4 col-md-4 col-sm-4">
+            <div class="grafik">
+                <a href="{% url 'grafik' %}">
+                    <img class="img-responsive" src="{% static 'img/home.jpg'%}">
+                    <div class="description">
+                        <h1>GRAFIK</h1>
+                        <p> Zajecia we wszystkie dni tygodnia, dla osób w każdym wieku sprawdź grafik Zajęć!</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col col-lg-2 col-md-2 col-sm-2">
+            <a href="{% url 'kadra' %}">
+                <img src="{% static 'img/kadra_1.jpg'%}">
+                <div class="description_2"><p>Nasza Kadra</p></div>
+            </a>
+            <a href="{% url 'zajecia' %}">
+                <img src="{% static 'img/kadra.jpg'%}">
+                <div class="description_2"><p>Zobacz Zajecia</p></div>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class=" col col-lg-3 col-md-3 col-sm-3"></div>
+        <div class="col col-lg-2 col-md-2 col-sm-2">
+            <div class="linki">
+                <h1>Znajdź nas!</h1>
+                <button>facebook</button>
+                <button>instagram</button>
+                <button>youtube</button>
+            </div>
+        </div>
+        <div class="col col-lg-4 col-md-4 col-sm-4">
+            <div class="o_nas">
+                <h1>o nas!</h1>
+                <ul>
+                    <li>Szkoła powstała w 2012 roku, załozona przez miłośników tańca</li>
+                    <li>Nasza kadra składa się z osób doświadczeni i zajawienych tańcem </li>
+                    <li>Zajęcia są skierowane do wszystkich </li>
+                </ul>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                <img class="img-responsive" src="{% static 'img/grafik.jpg'%}"/>
-                <a href="{% url 'grafik' %}" class="btn" role="button">Zobacz Grafik Zajęć</a>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-</div>
+<script type="text/javascript">
+    const image = document.querySelector('.img-responsive');
+    const images = ["{% static 'img/home.jpg'%}", "{% static 'img/home_1.jpg'%}"];
+    let index = 0;
+
+    function changeImage(){
+        $(image).animate({opacity:0},1000, function (){
+        $(image).animate({opacity:1},1000);
+        image.src = images[index];
+    })
+        if(index < images.length - 1){
+            index += 1;
+        } else {
+            index = 0;
+        }
+    }
+
+
+    setInterval(function () {
+        changeImage()
+    }, 10000);
+
+
+</script>

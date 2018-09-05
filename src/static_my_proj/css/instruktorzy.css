@@ -1,0 +1,23 @@
+.col{
+    margin-top: 2%;
+    padding: 0;
+    color:white;
+    font-size: 15px;
+}
+
+img{
+    width: 100%;
+    height: 33rem;
+}
+
+h1{
+    color: #bc9fc1;
+}
+h1, p{
+    margin: 0px 5px 0px 10px
+}
+
+.description{
+    background-color: rgba(51, 51, 51, 0.71);
+    height: 33rem;
+}
