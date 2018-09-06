@@ -1,17 +1,19 @@
 h1{
     padding-bottom: 5%;
+    text-align: center;
+    margin-top: 30px;
 }
 table{
     color: white;
 }
 
 td.nazwa{
-    background-color: #444444;
+    background-color: rgba(51, 51, 51, 0.8);
 }
 
 td.cena{
-    background-color: #8a4182;
+    background-color: #8a4182d6;
 }
  td:hover{
-     background-color: #111111;
+     background-color: #bc9fc1;
  }

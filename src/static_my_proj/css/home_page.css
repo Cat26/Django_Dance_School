@@ -15,7 +15,7 @@ img {
 }
 
 .grafik img{
-    height: 45rem;
+    /*height: 45rem;*/
 }
 
 /*.btn {*/
@@ -47,6 +47,24 @@ img {
     background-color: rgba(245, 242, 242, 0.17);
     position: absolute;
     color: white;
+}
+
+@media(max-width: 1440px){
+    .description{
+        top: 65%;
+    }
+    .description h1{
+        font-size: 20px;
+    }
+}
+
+@media(max-width: 1024px){
+    .description{
+        top: 55%;
+    }
+    .linki button{
+        width: 70%;
+    }
 }
 .description_2{
     background-color: #333;

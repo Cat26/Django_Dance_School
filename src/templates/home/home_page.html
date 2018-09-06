@@ -16,14 +16,16 @@
             </div>
         </div>
         <div class="col col-lg-2 col-md-2 col-sm-2">
-            <a href="{% url 'kadra' %}">
-                <img src="{% static 'img/kadra_1.jpg'%}">
-                <div class="description_2"><p>Nasza Kadra</p></div>
-            </a>
-            <a href="{% url 'zajecia' %}">
-                <img src="{% static 'img/kadra.jpg'%}">
-                <div class="description_2"><p>Zobacz Zajecia</p></div>
-            </a>
+            <div class="images">
+                <a href="{% url 'kadra' %}">
+                    <img src="{% static 'img/kadra_1.jpg'%}">
+                    <div class="description_2"><p>Nasza Kadra</p></div>
+                </a>
+                <a href="{% url 'zajecia' %}">
+                    <img src="{% static 'img/kadra.jpg'%}">
+                    <div class="description_2"><p>Zobacz Zajecia</p></div>
+                </a>
+            </div>
         </div>
     </div>
     <div class="row">
@@ -50,10 +52,9 @@
     </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 <script type="text/javascript">
     const image = document.querySelector('.img-responsive');
-    const images = ["{% static 'img/home.jpg'%}", "{% static 'img/home_1.jpg'%}"];
+    const images = ["{% static 'img/home.jpg' %}", "{% static '/img/home_1.jpg'%}"];
     let index = 0;
 
     function changeImage(){
@@ -72,6 +73,11 @@
     setInterval(function () {
         changeImage()
     }, 10000);
+
+    setInterval(function(){
+       let h = document.querySelector('.images').offsetHeight;
+       image.style.height = h +'px';
+    }, 500)
 
 
 </script>
