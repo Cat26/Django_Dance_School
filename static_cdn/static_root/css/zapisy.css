@@ -1,13 +1,45 @@
 h1{
-    color: #CC3434;
+    color: #8a4182;
+    padding-left: 2%;
+}
+a{
+    font-size: 30px;
 }
 td{
     padding-top: 25px;
-    padding-bottom: 25px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
+
+.btn{
+    color: white;
+    border-radius: 0px;
+    background: #333;
+    text-decoration: none;
+    text-align: center;
+    height: 60px;
+
+}
+
 table{
     border: solid #aaaaaa;
-    border-radius: 15px;
+    margin-left: 2%;
+
+}
+.zaj{
+    margin-bottom: 20px;
+}
+.btn:hover{
+    background: #8a4182;
+}
+.btn:active{
+    background-color: #8a4182;
+}
+.zaj .btn{
+    height: 120px;
+    margin-left: 2%;
+}
+.container{
+    font-size: 25px;
 }
