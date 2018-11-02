@@ -1,1 +1,1 @@
-web: python src/manage.py runserver 0.0.0.0:$PORT
+web: gunicorn django_rental.wsgi —-log-file -
