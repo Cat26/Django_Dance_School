@@ -1,9 +1,8 @@
 h1{
     color: #8a4182;
     padding-left: 2%;
-}
-a{
-    font-size: 30px;
+    text-align: center;
+    margin: 30px !important;
 }
 td{
     padding-top: 25px;
@@ -12,15 +11,15 @@ td{
     padding-right: 30px;
 }
 
-.btn{
-    color: white;
-    border-radius: 0px;
-    background: #333;
-    text-decoration: none;
-    text-align: center;
-    height: 60px;
+/*.btn{*/
+    /*color: white;*/
+    /*border-radius: 0px;*/
+    /*background: #333;*/
+    /*text-decoration: none;*/
+    /*text-align: center;*/
+    /*height: 60px;*/
 
-}
+/*}*/
 
 table{
     border: solid #aaaaaa;
@@ -32,14 +31,18 @@ table{
 }
 .btn:hover{
     background: #8a4182;
+    border-color: #8a4182
 }
-.btn:active{
+.btn-primary:active{
     background-color: #8a4182;
+    border-color: #8a4182;
 }
 .zaj .btn{
-    height: 120px;
+    margin-top: 10px;
     margin-left: 2%;
 }
-.container{
-    font-size: 25px;
+
+.btn-primary {
+    background-color: #343a40;
+    border-color: #343a40;
 }

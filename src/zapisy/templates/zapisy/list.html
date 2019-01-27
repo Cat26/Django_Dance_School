@@ -1,29 +1,28 @@
 {% include "main.html" %}
 {% load staticfiles %}
 <link rel="stylesheet", href="{% static 'css/zapisy.css' %}">
-<div class ="container">
-    <div class="col">
+<div class ="container-fluid">
     <div class="row">
-        <div col-lg-4 col-md-4 col-sm-4>
-        <h1>Twoje Zajęcia:</h1>
+        <div class="col-lg-4 offset-lg-4 col-md-6 offset-md-1 col-sm-12">
+            <h1>Twoje Zajęcia:</h1>
+            {% if object_list %}
+                <table>
+                {% for obj in object_list %}
+                    <tr>
+                        <td>{{obj.get_your_choice_display}}</td>
+                        <td>{{obj.get_day_choice_display}}</td>
+                        <td>{{obj.get_hour_choice_display}}</td>
+                        <!--<td><a href="{{obj.get_absolute_url}}" class="btn btn-primary" role="button">Edytuj</a></td>-->
+                        <td><a href="{{obj.get_absolute_url}}" class="btn btn-primary" role="button">Edytuj</a></td>
+                     </tr>
+                {% endfor %}
+                </table>
+            {% else %}
+                <p>Nie jesteś zapisany na żadne zajęcia</p>
+            {% endif %}
             <div class="zaj">
-    <a href="{% url 'create'%}" class="btn btn-primary" role="button">Kliknij żeby dodać Zajęcia</a>
-                </div>
-        {% if object_list %}
-<table>
-    {% for obj in object_list %}
-        <tr>
-            <td>{{obj.get_your_choice_display}}</td>
-            <td>{{obj.get_day_choice_display}}</td>
-            <td>{{obj.get_hour_choice_display}}</td>
-            <td><a href="{{obj.get_absolute_url}}" class="btn btn-primary" role="button">Edytuj</a></td>
-         </tr>
-    {% endfor %}
-    </table>
-        {% else %}
-        <p>Nie jesteś zapisany na żadne zajęcia</p>
-        {% endif %}
+                <a href="{% url 'create'%}" class="btn btn-primary" role="button">Kliknij żeby dodać Zajęcia</a>
+            </div>
         </div>
-        </div>
-</div>
+    </div>
 </div>
